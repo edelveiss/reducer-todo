@@ -162,7 +162,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("sm")]: {
       width: "32ch",
       "&:focus": {
-        width: "38ch",
+        width: "32ch",
       },
     },
   },

@@ -9,11 +9,12 @@
 }
 .todo {
   font-size: 1.5rem;
-  padding-top: 2rem;
-  color: #4154b3;
+  padding-top: 1rem;
   cursor: pointer;
 }
 .todo.completed {
   text-decoration: line-through;
   color: grey;
+  /* background: rgb(215, 247, 231); */
+  background: rgb(212, 206, 241);
 }

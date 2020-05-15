@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
+import IconButton from "@material-ui/core/IconButton";
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -8,7 +9,10 @@ const useStyles = makeStyles((theme) => ({
     "& > *": {
       margin: theme.spacing(1.5),
       width: theme.spacing(80),
-      height: theme.spacing(8),
+      height: theme.spacing(5),
+      color: "rgb(40, 64, 189)",
+      fontWeight: "bolder",
+      //background: "rgb(247, 206, 220)",
     },
   },
 }));

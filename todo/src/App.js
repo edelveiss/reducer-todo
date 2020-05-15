@@ -10,11 +10,13 @@ function App() {
 
   const addTodo = (todoName) => {
     if (
-      todoName &&
-      !todoState.find((itemName) => {
+      todoState.find((itemName) => {
         return itemName.item.toLowerCase().includes(todoName.toLowerCase());
-      })
+      }) &&
+      todoName
     ) {
+      alert(`"${todoName}" todo has already been added`);
+    } else if (todoName) {
       const newTodo = { item: todoName, completed: false, id: Date.now() };
       dispatch({ type: "ADD_TODO", payload: newTodo });
     }
