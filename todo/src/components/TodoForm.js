@@ -6,11 +6,23 @@ import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import InputBase from "@material-ui/core/InputBase";
 import { fade, makeStyles } from "@material-ui/core/styles";
-import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
+import Button from "@material-ui/core/Button";
+import DeleteIcon from "@material-ui/icons/Delete";
 
-const TodoForm = () => {
+const TodoForm = (props) => {
+  const [itemName, setItemName] = useState("");
+
   const classes = useStyles();
+  const handleChanges = (e) => {
+    setItemName(e.target.value);
+  };
+  const handleAddItem = (e) => {
+    e.preventDefault();
+    props.addTodo(itemName);
+    setItemName("");
+  };
+
   return (
     <div>
       <div className={classes.root}>
@@ -23,20 +35,54 @@ const TodoForm = () => {
               aria-label="open drawer"
             >
               <img src="https://img.icons8.com/nolan/64/todo-list.png" />
+              <Typography
+                className={classes.title}
+                variant="h6"
+                noWrap
+                style={{ fontSize: "2rem" }}
+              >
+                To-Dos
+              </Typography>
             </IconButton>
-            <Typography
-              className={classes.title}
-              variant="h6"
-              noWrap
-              style={{ fontSize: "2rem" }}
+            <form onSubmit={handleAddItem} style={{ display: "flex" }}>
+              <div className={classes.search}>
+                <div className={classes.searchIcon}></div>
+                <InputBase
+                  value={itemName}
+                  onChange={handleChanges}
+                  placeholder="Enter Todo"
+                  classes={{
+                    root: classes.inputRoot,
+                    input: classes.inputInput1,
+                  }}
+                />
+              </div>
+
+              <Button
+                type="submit"
+                variant="contained"
+                color="secondary"
+                style={{ marginLeft: "0.6rem", marginRight: " 3rem" }}
+              >
+                Add Todo
+              </Button>
+            </form>
+            <Button
+              onClick={props.clearCompleted}
+              variant="contained"
+              color="secondary"
+              className={classes.button}
+              startIcon={<DeleteIcon />}
             >
-              To-Dos
-            </Typography>
+              Clear Completed
+            </Button>
+
             <div className={classes.search}>
               <div className={classes.searchIcon}>
                 <SearchIcon />
               </div>
               <InputBase
+                onChange={props.handleFormChange}
                 placeholder="Search…"
                 classes={{
                   root: classes.inputRoot,
@@ -100,10 +146,27 @@ const useStyles = makeStyles((theme) => ({
     transition: theme.transitions.create("width"),
     width: "100%",
     [theme.breakpoints.up("sm")]: {
-      width: "12ch",
+      width: "20ch",
       "&:focus": {
-        width: "20ch",
+        width: "24ch",
       },
     },
+  },
+
+  inputInput1: {
+    padding: theme.spacing(1, 1, 1, 0),
+    // vertical padding + font size from searchIcon
+    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+    transition: theme.transitions.create("width"),
+    width: "100%",
+    [theme.breakpoints.up("sm")]: {
+      width: "32ch",
+      "&:focus": {
+        width: "38ch",
+      },
+    },
+  },
+  button: {
+    margin: theme.spacing(1),
   },
 }));

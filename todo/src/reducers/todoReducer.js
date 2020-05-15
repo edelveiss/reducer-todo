@@ -5,29 +5,29 @@ export const initialTodoState = [
     id: 1528817077285,
   },
   {
-    task: "Bake Cookies",
+    item: "Bake Cookies",
+    completed: false,
     id: 1528817084358,
-    completed: false,
   },
   {
-    task: "Shopping",
+    item: "Shopping",
+    completed: false,
     id: 1528817084359,
-    completed: false,
   },
   {
-    task: "Fixing the door",
+    item: "Fixing the door",
+    completed: false,
     id: 1528817084360,
-    completed: false,
   },
   {
-    task: "Meeting with friends",
+    item: "Meeting with friends",
+    completed: false,
     id: 1528817084361,
-    completed: false,
   },
   {
-    task: "Home Work Project",
-    id: 1528817084362,
+    item: "Home Work Project",
     completed: false,
+    id: 1528817084362,
   },
 ];
 
