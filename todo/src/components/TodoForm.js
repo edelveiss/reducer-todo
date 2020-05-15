@@ -1,4 +1,5 @@
 import React, { useState, useReducer } from "react";
+//import moment from "moment";
 
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -12,7 +13,7 @@ import DeleteIcon from "@material-ui/icons/Delete";
 
 const TodoForm = (props) => {
   const [itemName, setItemName] = useState("");
-
+  //var now = moment().format("LTS");
   const classes = useStyles();
   const handleChanges = (e) => {
     setItemName(e.target.value);
@@ -98,6 +99,9 @@ const TodoForm = (props) => {
   );
 };
 export default TodoForm;
+
+//{moment(new Date(props.createdAt)).format("YYYY-MM-DD hh:mm:ss")}
+//{moment().format("LTS")}
 
 const useStyles = makeStyles((theme) => ({
   root: {

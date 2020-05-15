@@ -2,6 +2,7 @@ import React, { useState, useReducer } from "react";
 import TodoList from "./components/TodoList";
 import TodoForm from "./components/TodoForm";
 import { todoReducer, initialTodoState } from "./reducers/todoReducer";
+import moment from "moment";
 import "./App.css";
 
 function App() {
@@ -17,7 +18,12 @@ function App() {
     ) {
       alert(`"${todoName}" todo has already been added`);
     } else if (todoName) {
-      const newTodo = { item: todoName, completed: false, id: Date.now() };
+      const newTodo = {
+        item: todoName,
+        completed: false,
+        id: Date.now(),
+        timeTodo: moment(new Date()).format("YYYY-MM-DD hh:mm:ss"),
+      };
       dispatch({ type: "ADD_TODO", payload: newTodo });
     }
   };
