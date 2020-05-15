@@ -20,13 +20,13 @@ const useStyles = makeStyles((theme) => ({
 
 const Todo = (props) => {
   const classes = useStyles();
-  const [time, setTime] = useState("");
+  //const [time, setTime] = useState("");
   const handleClick = (e) => {
     props.toggleTodoCompleted(props.todoItem.id);
   };
-  useEffect(() => {
-    setTime(moment(new Date()).format("YYYY-MM-DD hh:mm:ss"));
-  }, []);
+  //   useEffect(() => {
+  //     setTime(moment(new Date()).format("YYYY-MM-DD hh:mm:ss"));
+  //   }, []);
   return (
     <div className={classes.root}>
       <Paper

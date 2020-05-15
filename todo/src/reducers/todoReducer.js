@@ -1,3 +1,5 @@
+import moment from "moment";
+
 export const initialTodoState = [
   {
     item: "Learn about reducers",
@@ -6,7 +8,7 @@ export const initialTodoState = [
     timeTodo: "2020-05-15 03:21:02",
   },
   {
-    item: "Bake Cookies",
+    item: "Baking Cookies",
     completed: false,
     id: 1528817084358,
     timeTodo: "2020-03-16 04:21:05",
@@ -27,7 +29,7 @@ export const initialTodoState = [
     item: "Meeting with friends",
     completed: false,
     id: 1528817084361,
-    timeTodo: "2020-04-19 07:21:02",
+    timeTodo: "2020-03-19 07:21:02",
   },
   {
     item: "Home Work Project",
@@ -45,6 +47,7 @@ export const todoReducer = (state, action) => {
           return {
             ...item,
             completed: !item.completed,
+            timeTodo: moment(new Date()).format("YYYY-MM-DD hh:mm:ss"),
           };
         }
         return item;
