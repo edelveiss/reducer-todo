@@ -1,0 +1,55 @@
+.App {
+  text-align: center;
+}
+.todoList {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.todo {
+  font-size: 1.1rem;
+  padding-top: 1rem;
+  cursor: pointer;
+}
+.todo.completed {
+  /* text-decoration: line-through; */
+  /* color: grey; */
+  /* background: rgb(215, 247, 231); */
+  background: rgb(232, 229, 247);
+}
+.todoItem {
+  width: 50%;
+  font-size: 1.5rem;
+}
+.todoItem.completedI {
+  text-decoration: line-through;
+  color: grey;
+}
+.time {
+  display: flex;
+  justify-content: space-between;
+
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.timeTodo {
+  width: 22%;
+  color: red;
+}
+.timeDone {
+  width: 22%;
+  color: rgb(52, 201, 52);
+}
+.clockS {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+.clockSection {
+  display: flex;
+  width: "30%";
+}
+h1 {
+  color: rgb(40, 64, 189);
+}
