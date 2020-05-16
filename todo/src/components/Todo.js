@@ -3,13 +3,15 @@ import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import IconButton from "@material-ui/core/IconButton";
 import moment from "moment";
+import Icon from "@material-ui/core/Icon";
+import clock from "../assets/clock.png";
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     flexWrap: "wrap",
     "& > *": {
       margin: theme.spacing(1.5),
-      width: theme.spacing(80),
+      width: theme.spacing(120),
       height: theme.spacing(5),
       color: "rgb(40, 64, 189)",
       fontWeight: "bolder",
@@ -35,8 +37,16 @@ const Todo = (props) => {
         className={`todo${props.todoItem.completed ? " completed" : ""}`}
       >
         <div className="time">
-          <div>{props.todoItem.item}</div>
-          <div>{props.todoItem.timeTodo}</div>
+          <div className="timeTodo">{props.todoItem.timeTodo}</div>
+          <div
+            className={`todoItem${
+              props.todoItem.completed ? " completedI" : ""
+            }`}
+          >
+            {props.todoItem.item}
+          </div>
+
+          <div className="timeDone">{props.todoItem.timeDone}</div>
         </div>
       </Paper>
     </div>
@@ -44,3 +54,4 @@ const Todo = (props) => {
 };
 export default Todo;
 //{moment().format("LTS")}
+//className={`todo${props.todoItem.completed ? " completed" : ""}`}
