@@ -24,7 +24,7 @@ const TodoList = (props) => {
           </div>
         </div>
       ) : (
-        <h1 style={{ color: "green" }}>Cool!!! Well Done!!!</h1>
+        <h1 style={{ color: "green" }}>Well Done!!!</h1>
       )}
       {props.todoState
         .filter((itemName) => {
