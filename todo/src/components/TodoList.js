@@ -1,6 +1,7 @@
 import React, { useState, useReducer } from "react";
 import Todo from "./Todo";
 import clock from "../assets/clock.png";
+import tl from "../assets/tl.png";
 import timeIcon from "../assets/timeIcon.png";
 const TodoList = (props) => {
   return (
@@ -9,7 +10,7 @@ const TodoList = (props) => {
         <div className="clockS">
           <div className="clockSection" style={{ color: "red" }}>
             <div>
-              <img src={timeIcon} className="clockImgTime"></img>
+              <img src={tl} className="clockImgTime"></img>
             </div>
             <p>Start Time</p>
           </div>
@@ -17,10 +18,10 @@ const TodoList = (props) => {
             <h1>ToDo List</h1>
           </div>
           <div className="clockSection" style={{ color: "rgb(52, 201, 52)" }}>
-            <div>
-              <img src={timeIcon} className="clockImgTime"></img>
-            </div>
             <p>Done Time</p>
+            <div>
+              <img src={tl} className="clockImgTime"></img>
+            </div>
           </div>
         </div>
       ) : (

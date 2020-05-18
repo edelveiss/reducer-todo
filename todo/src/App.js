@@ -22,7 +22,7 @@ function App() {
         item: todoName,
         completed: false,
         id: Date.now(),
-        timeTodo: moment(new Date()).format("YYYY-MM-DD hh:mm:ss"),
+        timeTodo: moment(new Date()).format("LLL"),
       };
       dispatch({ type: "ADD_TODO", payload: newTodo });
     }
