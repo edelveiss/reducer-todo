@@ -36,10 +36,12 @@
 .timeTodo {
   width: 22%;
   color: red;
+  text-align: right;
 }
 .timeDone {
   width: 22%;
   color: rgb(52, 201, 52);
+  text-align: left;
 }
 .clockS {
   width: 70%;
